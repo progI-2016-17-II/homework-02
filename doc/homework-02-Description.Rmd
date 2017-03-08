@@ -1,0 +1,54 @@
+---
+title: "Házi feladat 2"
+subtitle: |
+  | Programozás I.
+date: "2016/17. II. félév"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+
+## I. feladat (2 pont)
+1. Ha Coospace-re szeretnéd feltölteni a házit, töltsd le onnan és csomagold ki a ```homework-02.zip```-et! Ha GitHub-on szeretnéd, akkor kövesd a III. feladat/1. és 2. pontját!
+2. Nyisd meg a ```homework-02``` R projektet! 
+3. Nyiss egy új R szkriptet és mentsd el egy ```src``` nevű mappába ```homework-02.R``` néven! Majd nyiss még egy új R szkriptet és mentsd el az ```src``` mappába ```homework-02-functions.R``` néven! A feladatokban írandó függvények a ```homework-02-functions.R``` szkriptbe kerüljenek, minden más a ```homework-02.R``` fájlba. Ha gitezel, itt nézd meg a III. feladat/3. pontját!
+4. A ```homework-02.R``` fájlt kikommentelt fejléccel kezdd! Ha gitezel, itt nézd meg a III. feladat/4. pontját! A fejlécben a következőket add meg: 
+    - fájl címe (*Házi feladat 2*)
+    - kurzus neve (*Programozás I.*)
+    - félév (*2016/17. II. félév*)
+    - neved
+    - dátum
+5. Kommenteld folyamatosan, amit csinálsz és figyelj, hogy minél jobban betartsd az R kódírási stílusára vonatkozó irányelveket!
+
+---
+
+## II. feladat (8 pont)
+1. Hívd be a előző háziban is használt ```fivethirtyeight``` package-et! Olvasd be a ```comic_characters``` datasetet!
+2. A data frame-ben van egy ```name``` nevű oszlop. Ezt alakítsd át úgy, hogy minden karakternek csak az elsődleges neve maradjon ott mindenféle zárójeles rész nélkül. Például "Spider-Man (Peter Parker)" helyett "Spider-Man", "Benjamin Grimm (Earth-616)" helyett "Benjamin Grimm" maradjon. Ehhez segítségedül lehet az ```strsplit``` függvény.
+3. Írj egy függvény ```get_gender``` néven, aminek az a célja, hogy egy karakter nevének megadásakor visszaadja a karakter genderét. A karakter genderét úgy add vissza, hogy ha a ```gsm``` oszlopban ```NA``` érték van, akkor a ```sex``` oszlop tartalmát írja ki a függvény, viszont ha a ```gsm``` oszlop értéke nem ```NA```, akkor a ```gsm``` oszlop tartalmát írja ki. A gender kiírásakor vágd le a " Characters" részt, tehát pl. "Male Characters" helyett "Male"-t, "Female Characters" helyett "Female"-t írjon ki a függvény.
+4. Nézd meg az előzőleg írt ```get_gender``` függvénnyel, hogy milyen genderű Thor, Katherine Pryde és Loki Laufeyson!
+5. Írj egy függvényt ```get_aligns``` néven, aminek az a célja, hogy az ```align``` oszlop értékeit megadva kiírja az összes karakter nevét ABC sorrendben, akik adott értékhez vannak sorolva! Tehát például a "Bad Characters" bemenetre térjen vissza a függvény az összes gonosz karakter nevével. Figyelj arra, hogy ```NA``` megadása esetén is működjön a függvény!
+6. Kérd le az előzőleg megírt ```get_aligns``` függvénnyel a "Bad Characters" és a "Good Characters" értékekhez tartozó neveket.
+7. Nyiss egy új R szkriptet és mentsd el egy ```tests``` nevű mappába ```test-get_aligns.R``` néven! Írj teszteket a ```get_aligns``` függvényhez ebbe szkriptbe!
+
+---
+
+## III. feladat (+2 pont)
+A feladat megoldásához segítségedül lehet [ez a leírás](https://gist.github.com/Chaser324/ce0505fbed06b947d962){target="_blank"} a Submitting a Pull Request részig.
+
+1. Forkold le a házi feladat repóját a GitHub csoportunkból saját magadhoz! Ezt a GitHub felületen a Fork gombbal tudod megtenni. Ezután klónozd le a forkodból a repót! Olvasd el ehhez [ezt](https://gist.github.com/Chaser324/ce0505fbed06b947d962#creating-a-fork){target="_blank"} és [ezt](https://gist.github.com/Chaser324/ce0505fbed06b947d962#keeping-your-fork-up-to-date){target="_blank"} a részt.
+2. Csinálj egy új branchet ```my-solutions-githubazonosito``` néven. Olvasd el ehhez [ezt](https://gist.github.com/Chaser324/ce0505fbed06b947d962#doing-your-work){target="_blank"} a részt.
+3. A ```.gitignore``` fájlból vedd ki az ```src/homework-02.R```, az ```src/homework-02-functions.R``` és a ```tests/test-get_aligns.R``` sort, majd commitold! Ha nem veszed ki ezeket a sorokat, nem fogod látni a szkriptjeid módosításait a Git fülön.
+4. A ```homework-02.R``` és ```homework-02-functions.R``` fájlok írása közben minimum kétszer commitolj:
+    * Egyszer, amikor már létrehoztad a két fájlt és megcsináltad a ```homework-02.R```-hez a fejlécet!
+    * Majd még egyszer, amikor megcsináltad a feladatmegoldásaidat! Ha egyben megcsinálod az összeset, elég csak egy commit. Ha több részletben csinálod, commitolj külön minden egyes részletet!
+5. A ```test-get_aligns.R``` szkriptet is commitold!
+6. Ha végeztél, mindent commitoltál, pushold a változásokat GitHubra és küldj egy pull requestet! Olvasd el ehhez [ezt](https://gist.github.com/Chaser324/ce0505fbed06b947d962#submitting-a-pull-request){target="_blank"} a részt.
+
+---
+ 
+
