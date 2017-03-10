@@ -30,11 +30,9 @@ class(comic_characters$name)
 # először kettészedem a nevüket két részre a zárójeles rész alapján
 # ehhez a strsplit függvényt használom
 names <- strsplit(comic_characters$name, "[()]")
-# mivel ez ekkor egy lista, aminek nekem az 1., 3., 5., stb. eleme kell
-# ezért a következőképpen tudom megfelelővé tenni az oszlopom tartalmát:
-# de ez se működik jól
-comic_characters$name<-
-  unlist(names)[2*(1:length(comic_characters$name))-1]
+for (i in 1:nrow(comic_characters)){
+  comic_characters$name[i]<-names[[i]][1]
+}
 
 # 3. get_gender függvény létrehozása
 # a függvény a homework-02-functions.R scriptben található
@@ -43,3 +41,10 @@ comic_characters$name<-
 get_gender("Thor")
 get_gender("Katherine Pryde")
 get_gender("Loki Laufeyson")
+
+# 5.
+
+#6. Bad Characters és Good Characters
+get_aligns("Bad Characters")
+get_aligns("Good Characters")
+
