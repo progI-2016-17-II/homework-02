@@ -36,5 +36,10 @@ names<-
 comic_characters$name<-
   unlist(names)[2*(1:length(comic_characters$name))-1]
 
-# 3.
+# 3. get_gender függvény létrehozása
+# a függvény a homework-02-functions.R scriptben található
 
+# 4. megnézni, hogy milyen genderű Thor, Katherine Pryde és Loki Laufeyson!
+get_gender("Thor")
+get_gender("Katherine Pryde")
+get_gender("Loki Laufeyson")
