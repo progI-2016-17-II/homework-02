@@ -29,7 +29,7 @@ class(comic_characters$name)
 # neve maradjon ott
 # először kettészedem a nevüket két részre a zárójeles rész alapján
 # ehhez a strsplit függvényt használom
-names <- strsplit(comic_characters$name, "[()]")
+names<- strsplit(comic_characters$name, "[ ][()]")
 for (i in 1:nrow(comic_characters)){
   comic_characters$name[i]<-names[[i]][1]
 }
@@ -42,9 +42,14 @@ get_gender("Thor")
 get_gender("Katherine Pryde")
 get_gender("Loki Laufeyson")
 
-# 5.
+# 5. get_align függvény létrehozása
+# a függvény a homework-02-functions.R scriptben található
 
-#6. Bad Characters és Good Characters
+# 6. Bad Characters és Good Characters kiírása
+# A "Bad Characters" align-nal jelzett szereplők nevei ABC rendben
 get_aligns("Bad Characters")
+# A "Good Characters" align-nal jelzett szereplők nevei ABC rendben
 get_aligns("Good Characters")
+# Az "NA" align-nal jelzett (vagyis hiányzú align-ú) szereplők nevei ABC rendben
+get_aligns(NA)
 
