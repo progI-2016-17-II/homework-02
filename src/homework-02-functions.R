@@ -1,16 +1,27 @@
 #----get_gender függvény--------------------------------------------------------
 get_gender <- function(name) {
   # A karakter nevének megadásakor adja vissza a karakter genderét!
-  gsm <- strsplit(comic_characters$gsm, "[ ]")
-    for (i in 1:nrow(comic_characters)){
-    print(gsm[[i]][1])
-  sex <- strsplit(comic_characters$sex, "[ ]")
-    for (i in 1:nrow(comic_characters)){
-      print(sex[[i]][1])
+  if (comic_characters$name==name){
+    comic_gender_1<-
+      subset(comic_characters$sex, comic_characters$name==name &
+               is.na(comic_characters$gsm)==TRUE)
+    # majd ezt íratom ki
+    print(sort(comic_gender_1, na.last = T))
+  } else {
+    comic_gender_2<-
+      subset(comic_characters$gsm, comic_characters$name==name &
+               is.na(comic_characters$gsm)==FALSE)
+    # majd ezt íratom ki
+    print(sort(comic_gender_2, na.last = T))
   }
-  
-  
-    }
+}    
+gsm <- strsplit(comic_characters$gsm, "[ ]")
+for (i in 1:nrow(comic_characters)){
+  print(gsm[[i]][1])
+  sex <- strsplit(comic_characters$sex, "[ ]")
+  for (i in 1:nrow(comic_characters)){
+    print(sex[[i]][1])
+  }
 }
 
 #----get_aligns függvény--------------------------------------------------------
@@ -25,12 +36,12 @@ get_aligns<-function(align){
   if (is.na(align)==TRUE){
     comic_align_na<-
       subset(comic_characters$name, is.na(comic_characters$align)==TRUE)
-    # majd ezt íratom ki növekvő sorrendben
-    print(sort(comic_align_na, decreasing=F, na.last = T))
-  }else{
+      # majd ezt íratom ki növekvő sorrendben
+        print(sort(comic_align_na, decreasing=F, na.last = T))
+  } else {
     comic_align<-
-    subset(comic_characters$name, comic_characters$align==align)
-    # majd ezt íratom ki növekvő sorrendben
-    print(sort(comic_align, decreasing=F, na.last = T))
+      subset(comic_characters$name, comic_characters$align==align)
+      # majd ezt íratom ki növekvő sorrendben
+        print(sort(comic_align, decreasing=F, na.last = T))
   }
 }
