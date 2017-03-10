@@ -29,10 +29,10 @@ class(comic_characters$name)
 # neve maradjon ott
 # először kettészedem a nevüket két részre a zárójeles rész alapján
 # ehhez a strsplit függvényt használom
-names<-
-  strsplit(comic_characters$name, "[()]")
+names <- strsplit(comic_characters$name, "[()]")
 # mivel ez ekkor egy lista, aminek nekem az 1., 3., 5., stb. eleme kell
 # ezért a következőképpen tudom megfelelővé tenni az oszlopom tartalmát:
+# de ez se működik jól
 comic_characters$name<-
   unlist(names)[2*(1:length(comic_characters$name))-1]
 
