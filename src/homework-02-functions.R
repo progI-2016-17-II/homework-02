@@ -5,10 +5,13 @@
 ##2017.03.15
                               ###FUNCTIONS###
 
-get_gender <- function(superhero) {
-  if (is.na(comic_characters$gsm[comic_characters$name == superhero]) == 1) {
-    print(substr(comic_characters$sex, 1, nchar(comic_characters$sex) - 11)
-          [[1]][1])
-} else {
-    print(comic_characters$gsm[comic_characters$name == superhero])[[1]][1]}
-  }
+
+get_gender <- function(name){
+  
+  if (is.na(comic_characters$gsm[comic_characters$name == name]) == TRUE) {
+    print(substr(comic_characters$sex[comic_characters$name == name][1], 1, 
+          nchar(comic_characters$sex[comic_characters$name == name]) - 11))
+  }else {
+    print(comic_characters$gsm[comic_characters$name == name][1])}
+  
+}

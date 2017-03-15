@@ -36,6 +36,7 @@ source("src/homework-02-functions")
 
 
 get_gender("Thor")
-
+get_gender("Katherine Pryde")
+get_gender("Loki Laufeyson")
 
 
