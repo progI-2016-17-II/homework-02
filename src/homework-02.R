@@ -40,6 +40,12 @@ get_gender("Loki Laufeyson")
 
 #II.5-6 feladat: get_aligns + bad/good characters
 
-get_aligns("Good Characters")
+#Ez miért nem működik?
+get_align_notworking("Good Characters")
+get_align_notworking("Bad Characters")
+
+#Ez már jó lesz!
+get_align("Good Characters")
+get_align("Bad Characters")
 
 

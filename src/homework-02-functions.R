@@ -19,16 +19,39 @@ get_gender <- function(name){
 
 #Get_aligns függvény írása
 
-get_aligns <- function(align) {
+
+get_align_notworking <- function(align) { #ez az egész vmiért 1 értéked ad
   ifelse (align == "Good Characters", 
-          comic_characters$name[which(comic_characters$align == "Good Characters")],
+          comic_characters$name[comic_characters$align == "Good Characters"],
           ifelse (align == "Bad Characters",
-                  comic_characters$name[which(comic_characters$align == "Bad Characters")],
+                  comic_characters$name[comic_characters$align == "Bad Characters"],
                   ifelse (align == "Neutral Characters",
-                          comic_characters$name[which(comic_characters$align == "Neutral Characters")],                 
+                          comic_characters$name[comic_characters$align == "Neutral Characters"],                 
                           ifelse (align == "Reformed Criminals",
-                                  comic_characters$name[which(comic_characters$align == "Reformed Criminals")],
+                                  comic_characters$name[comic_characters$align == "Reformed Criminals"],
                                   ifelse(is.na(comic_characters$align) == TRUE,
                                          comic_characters$name[(is.na(comic_characters$align) == TRUE)],
                                          "Who are you?")))))
-  }
+}
+
+#----------------
+
+get_align<-function(which_side){ #ez már jó lesz!
+if(is.na(which_side) == FALSE){
+sort(comic_characters$name[comic_characters$align == which_side]
+     , decreasing = FALSE) 
+}else{
+sort(comic_characters$name[is.na(comic_characters$align)==TRUE]
+     , decreasing = FALSE)
+}
+}
+
+
+
+
+
+
+
+
+
+
