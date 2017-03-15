@@ -15,7 +15,7 @@ source("~/homework-02/src/homework-02.R")
 # default teszt pipa
 
 test_that("default működik", {
-  expect_output(print(get_aligns()[695]),
+  expect_output(print(get_aligns()[696]),
    print(sort(comic_characters$name[comic_characters$align == "Bad Characters"],
              decreasing = F))[696])
 })
@@ -39,7 +39,7 @@ test_that("length teszt", {
   expect_length(get_aligns("Bad Characters"),
     length(comic_characters$align[comic_characters$align == "Bad Characters"]))
 })
-# ez beveszi az NA-kat
+# ez nem veszi be az NA-kat
 
 
 test_that("length teszt2", {
@@ -47,4 +47,15 @@ test_that("length teszt2", {
   length(sort(comic_characters$name[comic_characters$align == "Bad Characters"]
               , decreasing = F)))
 })
-# ez már nem
+# ez már igen
+
+# coverage teszt
+
+sum(c(length(get_aligns()),length(get_aligns("Good Characters")),
+     length(get_aligns("Neutral Characters")),length(get_aligns(NA)),
+     length(get_aligns("Reformed Criminals"))))
+summary(comic_characters$align) # megszámolja NA-t
+(table(comic_characters$align)) # nem számolja meg az NA-t
+
+#jónak tűnik
+
