@@ -49,3 +49,8 @@ get_align("Good Characters")
 get_align("Bad Characters")
 
 
+#II.7
+
+#mappa és script létrehozva!
+
+
