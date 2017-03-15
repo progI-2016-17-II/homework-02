@@ -17,6 +17,6 @@ test_that(
     expect_error(get_aligns(aligns = A, B))
     expect_error(get_aligns(aligns = A, B, C))
     expect_output(get_aligns(aligns = 1), "Csak szoveget irhatsz be!")
-    expect_equal(get_aligns(aligns="Reformed Criminals"), c("Brian Elliot", "Owen Mercer", "Paula von Gunther"))
+    expect_equal(get_aligns(aligns = "Reformed Criminals"), c("Brian Elliot", "Owen Mercer", "Paula von Gunther"))
     
   })
