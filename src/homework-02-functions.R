@@ -15,3 +15,18 @@ get_gender <- function(who) {
   { print(substring(comic_characters$sex[i],1,regexpr(" ",comic_characters$sex[i],fixed=T)-1)) 
   } else { print(comic_characters$gsm[i]) }
 }
+
+#---------------------------II.05 feladat---------------------------
+# Írj egy függvényt get_aligns néven, aminek az a célja, hogy az align oszlop 
+# értékeit megadva kiírja az összes karakter nevét ABC sorrendben, 
+# akik adott értékhez vannak sorolva! Tehát például a “Bad Characters” 
+# bemenetre térjen vissza a függvény az összes gonosz karakter nevével. 
+# Figyelj arra, hogy NA megadása esetén is működjön a függvény!
+
+
+get_aligns <- function(goodbad=NA) {
+  if (is.na(goodbad)) {
+    print(sort(comic_characters$name[is.na(comic_characters$align)]))
+  } else print(sort(comic_characters$name[regexpr(goodbad,comic_characters$align)>0]))
+}
+

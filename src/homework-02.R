@@ -46,3 +46,15 @@ get_gender
 get_gender("Thor")
 get_gender("Katherine Pryde")
 get_gender("Loki Laufeyson")
+
+#---------------------------II.05 feladat---------------------------
+# Kész a függvény
+get_aligns
+
+#---------------------------II.06 feladat---------------------------
+# Kérd le az előzőleg megírt get_aligns függvénnyel a “Bad Characters” 
+# és a “Good Characters” értékekhez tartozó neveket.
+
+get_aligns("Bad Characters")
+get_aligns("Good Characters")
+
