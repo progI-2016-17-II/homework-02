@@ -1,7 +1,5 @@
 #__________________________Get_gender függvény__________________________________
-#A strsplitnél a () előtti szóközt nem tudtam kivágni, így amikor a fgv
-#használatánál lekérjük a name-hez tartozó adatokat ilyen formátumban kell
-#megtenni: "Thor " (szóközzel)
+
 
 get_gender <- function(name) {
   v = (match(name, comic_characters$name))
@@ -20,10 +18,11 @@ get_gender <- function(name) {
 # Valamiért az NA feltétel nem jó
 
 get_aligns <- function(align_help) {
-  align_filter <- subset(comic_characters, align == align_help)
+  align_filter <- subset(comic_characters, comic_characters$align == align_help)
   if (is.na(align_filter$align[1]) == T) {
     sort(align_filter$name, decreasing = F)
   } else {
     sort(align_filter$name, decreasing = F)
   }
 }
+

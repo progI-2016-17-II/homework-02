@@ -27,12 +27,10 @@ head(comic_characters)
 for (j in 1:nrow(comic_characters)) {
   comic_characters$name[j] <-
     unlist(strsplit(comic_characters$name[j],
-                    split = "(", fixed = TRUE))[1]
+                    split = " (", fixed = TRUE))[1]
 }
 
-#Behívom a függvényeket:
 
-source("src/homework-02-functions.R")
 
 #Character rész levágása:
 
@@ -46,13 +44,16 @@ for (h in 1:nrow(comic_characters)) {
                                              split = " ", fixed = TRUE))[1]
 }
 
+#Behívom a függvényeket:
+
+source("~/homework-02/src/homework-02-functions.R")
 
 #4.)
 #get_gender függvény működése a gyakorlatban:
 
-get_gender ("Hercules ")
-get_gender ("Katherine Pryde ")
-get_gender ("Loki Laufeyson ")
+get_gender ("Thor")
+get_gender ("Katherine Pryde")
+get_gender ("Loki Laufeyson")
 
 #5.) Functions scriptben
 

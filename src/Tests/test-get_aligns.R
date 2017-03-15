@@ -6,7 +6,7 @@ install.packages("testthat", dependencies = T)
 }
 library(testthat)
 
-source("src/homework-02-functions.R")
+source("~/homework-02/src/homework-02-functions.R")
 
 
 test_that ("get_aligns függvény jól működik?", {
