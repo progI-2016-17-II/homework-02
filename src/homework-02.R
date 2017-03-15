@@ -30,13 +30,16 @@ for (i in 1:nrow(comic_characters)) {
 comic_characters$name <-
   substr(comic_characters$name, 1, nchar(comic_characters$name) - 1)
 
-#II.2 feladat
+#II.3(functions)-4.feladat: get_gender + Superhero's gender
 
 source("src/homework-02-functions")
-
 
 get_gender("Thor")
 get_gender("Katherine Pryde")
 get_gender("Loki Laufeyson")
+
+#II.5-6 feladat: get_aligns + bad/good characters
+
+get_aligns("Good Characters")
 
 
