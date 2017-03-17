@@ -6,14 +6,13 @@
 ##Szilágyi Ádám
 ##2017.03.15
 
-
 #II.1 feladat: Package installálás, behívás
 
 if (!("fivethirtyeight" %in% installed.packages())) {
   install.packages("fivethirtyeight")
 }
 
-require(fivethirtyeight, quietly = TRUE)
+require(fivethirtyeight)
 
 data(comic_characters)
 
@@ -24,10 +23,10 @@ head(comic_characters)
 for (i in 1:nrow(comic_characters)) {
   comic_characters$name[i] <-
     unlist(strsplit(comic_characters$name[i],
-                    split = "(", fixed = TRUE))[1]
-  }
+              split = "(", fixed = TRUE))[1]
+}
 
-comic_characters$name <-
+comic_characters$name <- #bennemaradt, ezért levágom a végéről a szóközt
   substr(comic_characters$name, 1, nchar(comic_characters$name) - 1)
 
 #II.3(functions)-4.feladat: get_gender + Superhero's gender
@@ -48,9 +47,15 @@ get_align_notworking("Bad Characters")
 get_align("Good Characters")
 get_align("Bad Characters")
 
-
-#II.7
-
+#II.7 feladat: Függvénytesztelés
 #mappa és script létrehozva!
+
+if (!("testthat" %in% installed.packages())) {
+  install.packages("testthat", dependencies = T)
+}
+
+require(testthat)
+
+
 
 
